@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyappcomponentoneComponent } from './myappcomponentone/myappcomponentone.component';
 import { FormsModule } from '@angular/forms';
+import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyappcomponentoneComponent
+    MyappcomponentoneComponent,
+    LifeCycleHooksComponent
   ],
   imports: [
     BrowserModule,

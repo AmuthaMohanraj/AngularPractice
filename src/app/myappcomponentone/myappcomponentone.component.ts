@@ -1,11 +1,11 @@
-import { Component, OnInit, OnChanges, SimpleChanges, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, AfterViewInit,AfterContentChecked,AfterContentInit, OnDestroy } from '@angular/core';
 
 @Component({
    selector: 'app-myappcomponentone',
    templateUrl: './myappcomponentone.component.html',
    styleUrls: ['./myappcomponentone.component.scss']
 })
-export class MyappcomponentoneComponent implements OnInit, OnChanges, AfterViewInit {
+export class MyappcomponentoneComponent implements OnInit, OnChanges, AfterViewInit,AfterContentChecked,AfterContentInit,OnDestroy{
 
    myAppName: string = 'mohanraj';
    isDisable: boolean = false;
@@ -66,9 +66,12 @@ export class MyappcomponentoneComponent implements OnInit, OnChanges, AfterViewI
 
    ]
 
+
    constructor() {
       console.log('inside the constructor')
    }
+
+
    ngOnInit(): void {
       // throw new Error('Method not implemented.');
       console.log('inside the oninit')
@@ -81,6 +84,20 @@ export class MyappcomponentoneComponent implements OnInit, OnChanges, AfterViewI
       // throw new Error('Method not implemented.');
       console.log('inside the viewinit')
    }
+   ngAfterContentInit(): void {
+      // throw new Error('Method not implemented.');
+      console.log('inside the AfterContentInit')
+   }
+   ngAfterContentChecked(): void {
+      // throw new Error('Method not implemented.');
+      console.log('inside the AfterContentChecked');
+   }
+   ngOnDestroy(): void {
+      // throw new Error('Method not implemented.');
+      console.log('inside the onDestroy')
+   }
+
+   
 
    fun() {
       this.myAppName = 'seshika';
