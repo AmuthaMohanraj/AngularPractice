@@ -1,0 +1,145 @@
+<p>myappcomponentone works!</p>
+<h2>{{myAppName}}</h2>
+
+{{2+2}}
+
+<input type="text" value="{{myAppName}}">
+
+<input type="text" #myname [value]="myAppName" [disabled]="isDisable">
+
+<input type="button" value="button" (click)="fun()">
+
+
+<input type="button"  (click)="fun1($event)" value="click pointer event">
+
+
+{{myname.value}}
+
+
+<h2 *ngIf="show; else elseBlock">Welcome</h2>
+
+
+<ng-template #elseBlock>
+    <p>not Welcome</p>
+</ng-template>
+
+
+
+<input type="text" value="v">
+<ul>
+    <li *ngFor="let i of arr; index as m">{{m+" "+i}}</li>
+</ul>
+
+
+<p>second list</p>
+<ul>
+    <li *ngFor="let j of obj">{{j}}</li>
+</ul>
+
+
+  <!-- <tr>
+    <td *ngFor="let k of Object.keys(obj1)">{{ obj1[k] }}</td>
+  </tr>
+   -->
+  
+  two-way binding <input type="text" [(ngModel)]="str">
+   <p>{{str}}</p>
+
+<thead>
+    <th>id</th>
+    <th>name</th>
+    <th>rollno</th>
+    <th>age</th>
+    <th>gender</th>
+</thead>
+<tbody *ngFor="let m of arrOfObject; index as n">
+    <td>{{n+1}}</td>
+    <td>{{m.name}}</td>
+    <td>{{m.rollno}}</td>
+    <td>{{m.age}}</td>
+    <td>{{m.totalSubject}}</td> 
+</tbody>
+
+
+
+<div class="container">
+    <h2>Subject Scores</h2>
+    <form>
+
+      <div class="form-group">
+        <label for="tamil">Tamil:</label>
+        <input type="text" class="form-control" id="tamil" [(ngModel)]="tamil" name="tamil">
+
+        <div *ngIf="tamil<0 || tamil>100">Invalid</div>
+        <div *ngIf="tamil>=35 else failcode">Pass</div>
+
+        <ng-template #failcode>
+            <div>Fail</div>
+        </ng-template>  
+
+      </div>
+
+      <div class="form-group">
+        <label for="english">English:</label>
+        <input type="text" class="form-control" id="english" [(ngModel)]="english" name="english">
+
+        <div *ngIf="english<0 || english>100">Invalid</div>
+        <div *ngIf="english>=35 else failcode">Pass</div>
+        <ng-template #failcode>
+            <div>Fail</div>
+        </ng-template>
+
+      </div>
+
+      <div class="form-group">
+        <label for="maths">Maths:</label>
+        <input type="text" class="form-control" id="maths" [(ngModel)]="maths" name="maths">
+
+        <div *ngIf="maths<0 || maths>100">Invalid</div>
+        <div *ngIf="maths>=35 else failcode">Pass</div>
+        <ng-template #failcode>
+            <div>Fail</div>
+        </ng-template>
+
+      </div>
+
+      <div class="form-group">
+        <label for="science">Science:</label>
+        <input type="text" class="form-control" id="science" [(ngModel)]="science" name="science">
+
+        <div *ngIf="science<0 || science>100">Invalid</div>
+        <div *ngIf="science>=35 else failcode">Pass</div>
+        <ng-template #failcode>
+            <div>Fail</div>
+        </ng-template>
+
+        </div>
+
+      <div class="form-group">
+        <label for="social">Social:</label>
+        <input type="text" class="form-control" id="social" [(ngModel)]="social" name="social">
+
+        <div *ngIf="social<0 || social>100">Invalid</div>
+        <div *ngIf="social>=35 else failcode">Pass</div>
+        <ng-template #failcode>
+            <div>Fail</div>
+        </ng-template>
+
+    </div>
+    </form>
+  </div>
+
+
+<div *ngIf="tamil>=35&&english>=35&&maths>=35&&science>=35&&social>=35 then passcode else totfailcode"></div>
+
+<ng-template #passcode>
+    <img src="assets/pass.jpeg" alt="imgerr">
+        <div>All The Best</div>
+</ng-template>
+
+<ng-template #totfailcode>
+    <img src="assets/fail.png" alt="imgerr">
+   <div>Better Luck Next Time</div>
+</ng-template>
+
+
