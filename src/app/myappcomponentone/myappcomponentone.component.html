@@ -143,3 +143,19 @@
 </ng-template>
 
 
+title:{{property}}
+json:{{json.age}}
+cityName:{{city}}
+
+<ul>
+  <tr *ngFor="let i of json">
+      <td>{{i.empName}}</td>
+      <td>{{i.age}}</td>
+      <td>{{i.rollNo}}</td>
+      <td>{{i.mobileNo}}</td>
+  </tr>
+  <!-- <li>{{i.age}}</li> -->
+</ul>
+
+
+<button (click)="eventEmitterFunction()">Event Emitter</button>

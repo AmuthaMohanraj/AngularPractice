@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges, AfterViewInit,AfterContentChecked,AfterContentInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, AfterViewInit,AfterContentChecked,AfterContentInit, OnDestroy,Input,Output, EventEmitter } from '@angular/core';
 
 @Component({
    selector: 'app-myappcomponentone',
@@ -67,15 +67,24 @@ export class MyappcomponentoneComponent implements OnInit, OnChanges, AfterViewI
    ]
 
 
+
+   @Input() public property:any;
+   @Input() public json:any;
+   @Input("cityName") public city:any;
+   @Output() public giveValue=new EventEmitter();
+   @Output() public giveValueNgOnInit=new EventEmitter();
+   
+
    constructor() {
       console.log('inside the constructor')
    }
 
 
    ngOnInit(): void {
-      // throw new Error('Method not implemented.');
+      this.giveValueNgOnInit.emit('seshika')
       console.log('inside the oninit')
    }
+
    ngOnChanges(changes: SimpleChanges): void {
       // throw new Error('Method not implemented.');
       console.log('inside the onchanges')
@@ -97,7 +106,7 @@ export class MyappcomponentoneComponent implements OnInit, OnChanges, AfterViewI
       console.log('inside the onDestroy')
    }
 
-   
+
 
    fun() {
       this.myAppName = 'seshika';
@@ -109,5 +118,9 @@ export class MyappcomponentoneComponent implements OnInit, OnChanges, AfterViewI
       this.arr.push(this.myAppName)
    }
 
+
+   eventEmitterFunction(){
+      this.giveValue.emit('megha');
+   }
 
 }
