@@ -14,6 +14,15 @@ export class AppComponent implements AfterViewInit {
   title='seshika Arumugam';
   jsonvalues=[{empName:'Mohanraj',age:21,rollNo:211900300,mobileNo:7448462762},{empName:'poongodi',age:25,rollNo:211900400,mobileNo:9080818453}]
   city='Chennai';
+
+  //Practice
+  room='6 members';
+  roomMembers=['perumal','mohanraj','karthi','thamu','yogesh','venky'];
+  batch='(25-Members 2-leads)';
+  memberNames=['roshine','saravanan','poonelen','raghulpriyan','vignesh','raju','selva','priya','rajesh','thagam','mohanraj','akash','aravind','divya','nethaji','raghul','kishore','haridha','karthikesan','ajith','singaram','gokul','muthu','saravanan','uma','mahalashmi','maruthu'];
+
+
+
   message='';
   message1='';
   message2='';
@@ -33,7 +42,6 @@ export class AppComponent implements AfterViewInit {
     console.log(event1);
     this.message1=event1;
  }
-
 }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges, AfterViewInit,AfterContentChecked,AfterContentInit, OnDestroy,Input,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, AfterViewInit,AfterContentChecked,AfterContentInit, OnDestroy,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
    selector: 'app-myappcomponentone',
@@ -73,8 +73,14 @@ export class MyappcomponentoneComponent implements OnInit, OnChanges, AfterViewI
    @Input("cityName") public city:any;
    @Output() public giveValue=new EventEmitter();
    @Output() public giveValueNgOnInit=new EventEmitter();
-   
 
+
+   //Practice
+   @Input('aboutroom') public room:any;
+   @Input('colligies') public roomMembers:any;
+   @Input('aboutBatch') public batch:any;
+   @Input() public batchMembers:any;
+   
    constructor() {
       console.log('inside the constructor')
    }
